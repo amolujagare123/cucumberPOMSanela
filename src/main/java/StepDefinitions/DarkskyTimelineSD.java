@@ -84,6 +84,20 @@ public class DarkskyTimelineSD {
 
 
 
+    @Then("I verify lowest and highest temp is displayed correctly")
+    public void i_verify_lowest_and_highest_temp_is_displayed_correctly() throws Throwable {
+                   darkSkyPage.clickExpander();
+
+        ArrayList<String> expected = darkSkyPage.getBarTempList();
+        System.out.println(expected);
+        ArrayList<String> actual = darkSkyPage.getTimelineTempList();
+        System.out.println(actual);
+
+        Assert.assertEquals("temepratures are not correct",expected,actual);
+
+    }
+
+
 
 
     }

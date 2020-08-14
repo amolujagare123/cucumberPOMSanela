@@ -1,6 +1,7 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,48 @@ public class DarkSkyPage extends  BasePage{
     By mainTempText = By.xpath("//span[@class='summary swap']");
     By timelineTemtext = By.xpath("//span[@class='first']//span");
     By timeListRaw = By.xpath("//span[@class='hour']/span");
+    By expander = By.xpath("//a[@data-day='0']//span[@class='open']");
+
+    By barMaxTemp = By.xpath("//a[@data-day='0']//span[@class='maxTemp']");
+    By barMinTemp = By.xpath("//a[@data-day='0']//span[@class='minTemp']");
+
+    By timelineHightemp = By.xpath("//div[contains(@class,'revealed')]//span[contains(@class,'low')]//span[@class='temp']");
+    By timelineLowtemp = By.xpath("//div[contains(@class,'revealed')]//span[contains(@class,'high')]//span[@class='temp']");
+
+
+
+    public ArrayList<String> getBarTempList()
+    {
+        ArrayList<String> tempList = new ArrayList<>();
+
+        tempList.add(getTextFromElement(barMaxTemp).split("˚")[0]);          //74˚
+        tempList.add(getTextFromElement(barMinTemp).split("˚")[0]);          //74˚
+
+        return  tempList;
+
+    }
+
+    public  ArrayList<String> getTimelineTempList()
+    {
+        ArrayList<String> tempList = new ArrayList<>();
+
+        tempList.add(getTextFromElement(timelineHightemp).split("˚")[0]);          //74˚
+        tempList.add(getTextFromElement(timelineLowtemp).split("˚")[0]);          //74˚
+
+        return  tempList;
+    }
+
+
+
+    public void clickExpander()
+    {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,700)", "");
+
+        js.executeScript("arguments[0].click();",driver.findElement(expander));
+
+        //clickOn(expander);
+    }
 
 
     public ArrayList<Integer> getTimeList()

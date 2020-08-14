@@ -33,6 +33,7 @@ public class BasePage {
 				.ignoring(NoSuchElementException.class)
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(ElementNotInteractableException.class)
 				.ignoring(Throwable.class)
 				.withMessage(
 						"Webdriver waited for 50 seconds but still could not find the element therefore Timeout Exception has been thrown");
