@@ -19,6 +19,13 @@ public class DarkSkyPage extends  BasePage{
     By timelineHightemp = By.xpath("//div[contains(@class,'revealed')]//span[contains(@class,'low')]//span[@class='temp']");
     By timelineLowtemp = By.xpath("//div[contains(@class,'revealed')]//span[contains(@class,'high')]//span[@class='temp']");
 
+    By darkSkyAPILink = By.xpath("//a[contains(text(),'Dark Sky API')]");
+
+
+    public void clickDarkskyPageLink()
+    {
+        clickOn(darkSkyAPILink);
+    }
 
 
     public ArrayList<String> getBarTempList()

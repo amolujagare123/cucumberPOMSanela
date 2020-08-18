@@ -24,6 +24,7 @@ Then I verify lowest and highest temp is displayed correctly
 
 
  #4
+ @LoginPage
 Scenario: Verify invalid error message on Login Page
 Given I am on the darksky Login page
 When I click on Login button
