@@ -3,7 +3,6 @@
 
 Feature: Hotels.com website testing
 
-
 # 1
   @starVerify
   Scenario Outline: Verify user can only view the result by selected property class
@@ -26,13 +25,11 @@ Feature: Hotels.com website testing
     Given I am on default locations search result screen
     Then I verify system displays all hotels within "35" Km radius of airport
 
-
-
 #3
   @dealPrice
   Scenario: Verify todays deal price value
     Given I am on default locations search result screen
-    Then I verify todays deal is less than "500" rs
+    Then I verify todays deal is less than "10000" rs
 
 #4
   @roomcount

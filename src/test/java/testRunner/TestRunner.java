@@ -7,6 +7,6 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="Features",
         glue= "StepDefinitions",
-        tags = "@verifydistance")
+        tags = "@dealPrice")
 public class TestRunner {
 }
