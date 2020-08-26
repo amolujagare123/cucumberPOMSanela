@@ -13,17 +13,19 @@ Feature: Hotels.com website testing
     Examples:
       | stars   |
       | 5 stars |
+      | 4 stars |
       | 3 stars |
-      | 2 stars |
-
-
 
 #2
- @verifydistance
+ @verifyHotelName
+  Scenario: verify "The Orchid Hotel" is within radius
+   Given I am on default locations search result screen
+    And I verify "The Orchid Hotel" is within radius
+  @verifydistance
   Scenario: List of all of hotel within 35 km radius of airport or downtown // zip code 08837
     Given I am on default locations search result screen
     Then I verify system displays all hotels within "35" Km radius of airport
-    And I verify "Holiday Inn" is within radius
+
 
 
 #3
